@@ -14,7 +14,8 @@ export const siteConfig = {
   
   // Social Links (optional)
   socials: {
-    status: "coming_soon"
+    status: "coming_soon",
+    github: undefined
   },
   
   // Skills
