@@ -2,7 +2,7 @@
 export const siteConfig = {
   // Personal Information
   name: "Xenex",
-  title: "Discord Manager & Staff Coordinator",
+  title: "Discord & Minecraft Management",
   bio: "I'm a 17‑year‑old from the UK who helps communities run smoothly — I organise staff, run events, and keep servers healthy and welcoming.",
   avatar: "/avatar.png", // Place your avatar in public folder
   

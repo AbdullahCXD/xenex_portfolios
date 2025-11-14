@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Roboto } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const font = localFont({
-  src: "../fonts/Minecraft.ttf"
-})
+const font = Roboto({})
 
 export const metadata: Metadata = {
   title: "Xenex - Portfolio",
@@ -23,7 +21,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="XenStudios" />
       </head>
       <body
-        className={`${font.className} font-bold antialiased`}
+        className={`${font.className} text-xl font-bold antialiased`}
       >
         {children}
       </body>
