@@ -8,8 +8,8 @@ const font = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "XenStudios",
-  description: "A Studio that creates anything you desire: Minecraft Plugins, Discord Bots and Websites",
+  title: "Xenex - Portfolio",
+  description: "The main portfolio for my work",
 };
 
 export default function RootLayout({
