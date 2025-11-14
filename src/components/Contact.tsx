@@ -16,7 +16,7 @@ export function Contact() {
       icon: MessageCircle,
       label: "Discord",
       value: siteConfig.contact.discord,
-      href: siteConfig.contact.discordInvite || "#",
+      href: siteConfig.contact.discord || "#",
       color: "#5865f2"
     }
   ];
@@ -28,14 +28,6 @@ export function Contact() {
       label: "GitHub",
       href: siteConfig.socials.github,
       color: "#ffffff"
-    });
-  }
-  if (siteConfig.socials.twitter) {
-    socialLinks.push({
-      icon: Twitter,
-      label: "Twitter",
-      href: siteConfig.socials.twitter,
-      color: "#1da1f2"
     });
   }
 
