@@ -65,6 +65,13 @@ export const siteConfig = {
       text: "I love working with Xenex most of the item, he's chill and he is fun to work with. I love his work and he does it very efficiently!",
       avatar: null,
       server: "XenStudios"
+    },
+    {
+      name: "Dilan",
+      role: "CEO",
+      text: " I’ve been working with Xenex for over 2 years now, he’s not only a kind, hard-working and reliable staff member but he is also very talented at his roles",
+      avatar: null,
+      server: "StormNodes & XenStudios"
     }
   ],
   
