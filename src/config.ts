@@ -62,7 +62,7 @@ export const siteConfig = {
     {
       name: "AbdullahCXD",
       role: "Programmer",
-      text: "I love working with Xenex most of the item, he's chill and he is fun to work with. I love his work and he does it very efficiently!",
+      text: "I love working with Xenex most of the time, he's chill and he is fun to work with. I love his work and he does it very efficiently!",
       avatar: null,
       server: "XenStudios"
     },
