@@ -16,13 +16,13 @@ export function Projects() {
   );
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gradient-to-b from-transparent to-[#050505]">
+    <section id="projects" className="py-20 px-6 bg-linear-to-b from-transparent to-[#050505]">
       <div className="max-w-5xl mx-auto">
         <div className="bg-[rgba(18,18,18,0.6)] backdrop-blur-sm border border-[#222222] rounded-2xl p-8 md:p-12 shadow-2xl">
           {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl text-white mb-4 text-shadow-minecraft">
-              My Projects
+              My Projects And Servers
             </h2>
             <div className="w-24 h-1 bg-[#5cb85c] mx-auto mb-8"></div>
             
@@ -56,21 +56,14 @@ export function Projects() {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-[#2a2a2a] border-4 border-[#3a3a3a] minecraft-shadow hover:translate-y-[-8px] transition-all duration-300 flex flex-col"
+                className="bg-[#2a2a2a] border-4 border-[#3a3a3a] minecraft-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col"
               >
                 {/* Project Image / Placeholder (removed next/image) */}
                 <div className="relative h-48 border-b-4 border-[#3a3a3a] overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
-                  {project.image ? (
-                    // Use CSS background for cases where an image URL exists
-                    <div
-                      className="absolute inset-0 bg-center bg-cover"
-                      style={{ backgroundImage: `url(${project.image})` }}
-                    />
-                  ) : (
                     // Fallback placeholder with initials + small tag line
                     <div className="relative z-10 text-center px-4">
                       <div className="text-5xl font-bold text-[#5cb85c]">
-                        {project.title
+                        {project.title!
                           .split(" ")
                           .map((w) => (w ? w[0] : ""))
                           .slice(0, 2)
@@ -78,10 +71,9 @@ export function Projects() {
                           .toUpperCase()}
                       </div>
                       <div className="text-xs text-[#aaaaaa] mt-2">
-                        {project.tags.join(" • ")}
+                        {project.tags!.join(" • ")}
                       </div>
                     </div>
-                  )}
 
                   {project.featured && (
                     <div className="absolute top-4 right-4 bg-[#f0ad4e] border-2 border-[#d89442] px-3 py-1 flex items-center gap-1 z-20">
@@ -103,7 +95,7 @@ export function Projects() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, index) => (
+                    {project.tags!.map((tag, index) => (
                       <span
                         key={index}
                         className="text-xs bg-[#1a1a1a] border-2 border-[#3a3a3a] px-3 py-1 text-[#5cb85c]"
@@ -117,7 +109,7 @@ export function Projects() {
                   <div className="mb-4 flex-1">
                     <div className="text-xs text-[#888888] mb-2">Key Features:</div>
                     <ul className="space-y-1">
-                      {project.features.slice(0, 3).map((feature, index) => (
+                      {project.features!.slice(0, 3).map((feature, index) => (
                         <li key={index} className="text-xs text-[#cccccc] flex items-start gap-2">
                           <span className="text-[#5cb85c] mt-1">▪</span>
                           {feature}
@@ -128,7 +120,7 @@ export function Projects() {
 
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-2 mb-4">
-                    {Object.entries(project.stats).map(([key, value], index) => (
+                    {Object.entries(project.stats!).map(([key, value], index) => (
                       <div key={index} className="bg-[#1a1a1a] border-2 border-[#3a3a3a] p-2 text-center">
                         <div className="text-xs text-[#5cb85c]">{value}</div>
                         <div className="text-xs text-[#888888] capitalize">{key}</div>

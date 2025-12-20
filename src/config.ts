@@ -35,6 +35,22 @@ export const siteConfig = {
   // Projects
   projects: [
     {
+      id: "oasismc-owner",
+      title: "OasisMC - Founder",
+      description: "I am one of the Founders of OasisMC with my friend AbdullahCXD, this server is one of the coolest servers with it's ocean vibe survival gameplay",
+      image: null,
+      tags: ["Founder", "Community"],
+      features: [],
+      stats: {
+        users: "Unknown",
+        servers: "1"
+      },
+      links: {
+        demo: ""
+      },
+      featured: false,
+    },
+    {
       id: "chunkmc-staff-manager",
       title: "ChunkMC — Staff Manager",
       description: "I manage the staff team for ChunkMC: handling recruitment, onboarding, schedules, and moderation processes so the community can enjoy stable, well-run servers.",
@@ -47,13 +63,30 @@ export const siteConfig = {
         "Coordinating community events"
       ],
       stats: {
-        users: "2,900++",
+        users: "2,900+",
         servers: "1",
       },
       links: {
         demo: "https://discord.gg/xs6bjDhUtm",
       },
       featured: true
+    },
+    
+    {
+      id: "castaway-helper",
+      title: "Castaway - Helper",
+      description: "I am the helper in Castaway, I provide help and moderate the server to follow it's intended rules",
+      image: null,
+      tags: ["Helper", "Community"],
+      features: [],
+      stats: {
+        users: "4,000+",
+        servers: "1"
+      },
+      links: {
+        demo: "https://discord.gg/nfbvq4GUD"
+      },
+      featured: false,
     }
   ],
   
