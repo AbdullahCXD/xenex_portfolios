@@ -7,12 +7,12 @@ import { ExternalLink, Star } from "lucide-react";
 export function Projects() {
   const [filter, setFilter] = useState<"all" | "featured">("all");
 
-  const filteredProjects = siteConfig.projects.filter(project => 
-    filter === "all" ? true : project.featured
+  const filteredServers = siteConfig.servers.filter(server => 
+    filter === "all" ? true : server.featured
   );
 
   const allTags = Array.from(
-    new Set(siteConfig.projects.flatMap(p => p.tags))
+    new Set(siteConfig.servers.flatMap(s => s.tags))
   );
 
   return (
@@ -22,7 +22,7 @@ export function Projects() {
           {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl text-white mb-4 text-shadow-minecraft">
-              My Projects And Servers
+              My Servers
             </h2>
             <div className="w-24 h-1 bg-[#5cb85c] mx-auto mb-8"></div>
             
@@ -36,7 +36,7 @@ export function Projects() {
                     : "bg-[#2a2a2a] border-[#3a3a3a] text-[#aaaaaa] hover:text-white"
                 } minecraft-shadow btn-press`}
               >
-                All Projects ({siteConfig.projects.length})
+                All Servers ({siteConfig.servers.length})
               </button>
               <button
                 onClick={() => setFilter("featured")}
@@ -46,24 +46,23 @@ export function Projects() {
                     : "bg-[#2a2a2a] border-[#3a3a3a] text-[#aaaaaa] hover:text-white"
                 } minecraft-shadow btn-press`}
               >
-                Featured ({siteConfig.projects.filter(p => p.featured).length})
+                Featured ({siteConfig.servers.filter(s => s.featured).length})
               </button>
             </div>
           </div>
 
-          {/* Projects Grid */}
+          {/* Servers Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-            {filteredProjects.map((project) => (
+            {filteredServers.map((server) => (
               <div
-                key={project.id}
+                key={server.id}
                 className="bg-[#2a2a2a] border-4 border-[#3a3a3a] minecraft-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col"
               >
-                {/* Project Image / Placeholder (removed next/image) */}
+                {/* Server Image / Placeholder (removed next/image) */}
                 <div className="relative h-48 border-b-4 border-[#3a3a3a] overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
-                    // Fallback placeholder with initials + small tag line
                     <div className="relative z-10 text-center px-4">
                       <div className="text-5xl font-bold text-[#5cb85c]">
-                        {project.title!
+                        {server.title!
                           .split(" ")
                           .map((w) => (w ? w[0] : ""))
                           .slice(0, 2)
@@ -71,11 +70,11 @@ export function Projects() {
                           .toUpperCase()}
                       </div>
                       <div className="text-xs text-[#aaaaaa] mt-2">
-                        {project.tags!.join(" • ")}
+                        {server.tags!.join(" • ")}
                       </div>
                     </div>
 
-                  {project.featured && (
+                  {server.featured && (
                     <div className="absolute top-4 right-4 bg-[#f0ad4e] border-2 border-[#d89442] px-3 py-1 flex items-center gap-1 z-20">
                       <Star className="w-3 h-3 fill-white text-white" />
                       <span className="text-xs text-white">Featured</span>
@@ -83,19 +82,19 @@ export function Projects() {
                   )}
                 </div>
 
-                {/* Project Content */}
+                {/* Server Content */}
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl text-white mb-3 text-shadow-minecraft">
-                    {project.title}
+                    {server.title}
                   </h3>
                   
                   <p className="text-sm text-[#aaaaaa] mb-4 leading-relaxed">
-                    {project.description}
+                    {server.description}
                   </p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags!.map((tag, index) => (
+                    {server.tags!.map((tag, index) => (
                       <span
                         key={index}
                         className="text-xs bg-[#1a1a1a] border-2 border-[#3a3a3a] px-3 py-1 text-[#5cb85c]"
@@ -109,7 +108,7 @@ export function Projects() {
                   <div className="mb-4 flex-1">
                     <div className="text-xs text-[#888888] mb-2">Key Features:</div>
                     <ul className="space-y-1">
-                      {project.features!.slice(0, 3).map((feature, index) => (
+                      {server.features!.slice(0, 3).map((feature, index) => (
                         <li key={index} className="text-xs text-[#cccccc] flex items-start gap-2">
                           <span className="text-[#5cb85c] mt-1">▪</span>
                           {feature}
@@ -120,7 +119,7 @@ export function Projects() {
 
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-2 mb-4">
-                    {Object.entries(project.stats!).map(([key, value], index) => (
+                    {Object.entries(server.stats!).map(([key, value], index) => (
                       <div key={index} className="bg-[#1a1a1a] border-2 border-[#3a3a3a] p-2 text-center">
                         <div className="text-xs text-[#5cb85c]">{value}</div>
                         <div className="text-xs text-[#888888] capitalize">{key}</div>
@@ -129,11 +128,11 @@ export function Projects() {
                   </div>
 
                   {/* Links */}
-                  {project.links && Object.keys(project.links).length > 0 && (
+                  {server.links && Object.keys(server.links).length > 0 && (
                     <div className="flex gap-2">
-                      {project.links.demo && (
+                      {server.links.demo && (
                         <a
-                          href={project.links.demo}
+                          href={server.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 bg-[#5cb85c] hover:bg-[#4a9d4a] text-white border-b-4 border-[#3d8c3d] hover:border-b-2 hover:translate-y-[2px] transition-all text-xs px-4 py-3 text-center btn-press flex items-center justify-center gap-2"
@@ -142,9 +141,9 @@ export function Projects() {
                           View Demo
                         </a>
                       )}
-                      {(project.links as any).github && (
+                      {(server.links as any).github && (
                         <a
-                          href={(project.links as any).github}
+                          href={(server.links as any).github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 bg-[#8b7355] hover:bg-[#6e5a43] text-white border-b-4 border-[#5a4433] hover:border-b-2 hover:translate-y-[2px] transition-all text-xs px-4 py-3 text-center btn-press"
@@ -159,9 +158,9 @@ export function Projects() {
             ))}
           </div>
 
-          {filteredProjects.length === 0 && (
+          {filteredServers.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-[#aaaaaa]">No projects found in this category.</p>
+              <p className="text-[#aaaaaa]">No servers found in this category.</p>
             </div>
           )}
         </div>

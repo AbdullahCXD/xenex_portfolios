@@ -32,8 +32,8 @@ export const siteConfig = {
     }
   ],
   
-  // Projects
-  projects: [
+  // Servers
+  servers: [
     {
       id: "oasismc-owner",
       title: "OasisMC - Founder",
