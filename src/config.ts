@@ -51,28 +51,6 @@ export const siteConfig = {
       featured: false,
     },
     {
-      id: "chunkmc-staff-manager",
-      title: "ChunkMC — Staff Manager",
-      description: "I manage the staff team for ChunkMC: handling recruitment, onboarding, schedules, and moderation processes so the community can enjoy stable, well-run servers.",
-      image: null,
-      tags: ["Staff Manager", "Community"],
-      features: [
-        "Recruiting and onboarding new moderators",
-        "Creating shift rotas and coverage plans",
-        "Setting up moderation policies and procedures",
-        "Coordinating community events"
-      ],
-      stats: {
-        users: "2,900+",
-        servers: "1",
-      },
-      links: {
-        demo: "https://discord.gg/xs6bjDhUtm",
-      },
-      featured: true
-    },
-    
-    {
       id: "castaway-helper",
       title: "Castaway - Helper",
       description: "I am the helper in Castaway, I provide help and moderate the server to follow it's intended rules",
